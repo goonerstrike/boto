@@ -14,15 +14,12 @@ for instance in instances:
     print(instance.public_ip_address, instance.tags[0].get("Value"))
 
 simples = ec2.instances.all()
-#attrs = vars(simples)
-print "\nPrinting Simples:"
-print 
 
-print "\nPrinting ID, Public IP and \"ec2.instances.all()\""
+print "\n### Printing ID, Public IP and Security Group" 
 for simple in simples:
-    print simple.id, simple.public_ip_address, simple.items()
+    print simple.tags[0]['Value'], simple.public_ip_address, simple.security_groups[0]['GroupId']
 
-print "\nPrinting meta tags"
+#print "\nPrinting meta tags"
 #for status in ec2.meta.client.describe_instance_status()['InstanceStatuses': name]:
  #   print status
 
