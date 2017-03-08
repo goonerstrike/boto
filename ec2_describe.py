@@ -11,6 +11,15 @@ for instance in instances:
   print instance.tags[1].get("Value")
 
 
+### Printing Volume Tags
+print "\n\n### Volume tags:"
+volumes = ec2.volumes.all()
+for volume in volumes:
+  if volume.tags[0].get("Value") == '':
+    print "BLAHJ"
+  else:
+    print volume.tags
+
 
 
 
